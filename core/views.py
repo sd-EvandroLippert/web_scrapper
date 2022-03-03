@@ -12,10 +12,10 @@ class IndexView(FormView):
     template_name = "index.html"
     success_url = reverse_lazy("index")
 
-    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
-        context = super().get_context_data(**kwargs)
-        context["proxys"] = ProxyLists.objects.all()
-        return context
+    def get(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+        proxy = ProxyLists.objects.all()
+        return super().get(request, {'proxy': proxy},  *args, **kwargs)
+
 
     def post(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
         pop_db = request.POST.get("bulkcreate")
