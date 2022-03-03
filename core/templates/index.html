@@ -21,9 +21,19 @@
             {% csrf_token %}
             <input type="checkbox" id="bulkcreate" name="bulkcreate" value="True">Bulk Create<br>
             <input type="checkbox" id="bulkdelete" name="bulkdelete" value="True">Bulk Delete<br>
-        <button id="populatedb", name="populatedb", action="POST", value="">DO!</button><br>
+        <button id="populatedb", name="populatedb", action="POST", value="populate">DO!</button><br>
         </form>
     </div>
+    <div class="col-sm">
+      <p><h5>Criar Usuário</h5></p>
+      <form id="UsuarioForm" action="{% url 'index' %}" method="post" class="form">
+          {% csrf_token %}
+          <table>
+          {{ form.as_table}}
+        </table>
+      <button id="cadastrar", name="cadastrar", action="POST", value="cadastrar">Cadastrar!</button><br>
+      </form>
+  </div>
     </div>
     </div>
     <div class="table-responsive-md">
