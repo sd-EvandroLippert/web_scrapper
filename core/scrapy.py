@@ -1,6 +1,5 @@
 from typing import Dict, List
 import requests
-import pandas as pd
 from bs4 import BeautifulSoup
 from requests.models import Response
 import base64
