@@ -1,5 +1,7 @@
 # web_scrapper
 
+O site está disponível em https://scrapper-el.herokuapp.com
+
 Essa aplicação Django realiza scrapping no site `http://free-proxy.cz/en/main/` trazendo os proxys e as informações sobre eles.
 
 ## Para rodar a aplicação:
